@@ -1,3 +1,5 @@
+from pathlib import Path
+
 class BMP_Tools:
     INPUT_PATH = "../../input/bmp"
     OUTPUT_PATH = "../../output/bmp"
@@ -5,8 +7,8 @@ class BMP_Tools:
     def __init__(self):
         pass
 
-    def read():
+    def read(self):
         pass
 
-    def export():
+    def export(self):
         pass
