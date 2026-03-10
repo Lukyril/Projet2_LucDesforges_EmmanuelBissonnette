@@ -10,15 +10,10 @@ class BMP_Tools:
     EXTENSION_PATTERN = "*.bmp"
 
     def __init__(self):
-        base_dir = Path(__file__).parent.parent
-        print(f"Base Directory: {base_dir}")
-        self.PATH = base_dir
+        self.PATH = Path(__file__).parent.parent
 
-    def read(self):
-        
-        file_path = self.PATH / self.INPUT_PATH      
-        path = Path(file_path)
-        print(f"Dynamic File Path: {file_path}")
+    def read(self): 
+        path = Path(self.PATH / self.INPUT_PATH)
 
         try:
             first_file = next(path.glob(self.EXTENSION_PATTERN))
