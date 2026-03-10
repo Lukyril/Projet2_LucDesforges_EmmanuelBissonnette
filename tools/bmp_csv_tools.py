@@ -12,16 +12,16 @@ class BMP_CSV_Tools:
     
     def convert_bmp_to_csv(self):
         img = Image.open(self.bmptools.get_path())
+        img = img.convert('L')
         img_array = np.asarray(img, dtype = int)
 
         self.csvtools.export(img_array)
 
     def convert_csv_to_bmp(self, height = 20, width = 10, mode = 'L'):
         try:
-            data = pd.read_csv(self.csvtools.get_path(), header=None).values
-            data = data.astype(np.uint8)
-            
-            self.bmptools.export(data)
+            csv = pd.read_csv(self.csvtools.get_path(), header=None)
+            csv_array = csv.to_numpy().astype(np.uint8)
+            self.bmptools.export(csv_array)
         except FileNotFoundError:
             print(f"Error: The file '{self.csvtools.FILENAME}' was not found.")
         except ValueError as e:

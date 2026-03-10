@@ -28,7 +28,8 @@ class CSV_Tools:
         if len(pixels.shape) == 3: # Color image (H, W, C)
             # Reshape from 3D (height, width, channels) to 2D (height, width*channels)
             height, width, channels = pixels.shape
-            img_array_reshape = pixels.reshape(height, width * channels)
+            print(pixels.shape)
+            img_array_reshape = pixels.reshape(height, width*channels)
         else: # Grayscale image (H, W)
             img_array_reshape = pixels
 
