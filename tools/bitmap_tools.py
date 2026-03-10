@@ -12,13 +12,13 @@ class BMP_Tools:
     def __init__(self):
         self.PATH = Path(__file__).parent.parent
 
-    def read(self): 
+    def get_path(self): 
         path = Path(self.PATH / self.INPUT_PATH)
 
         try:
             first_file = next(path.glob(self.EXTENSION_PATTERN))
             print(f"File found with extension 'bmp' with path: '{first_file}'")
-            return open(first_file).read()
+            return first_file
         except StopIteration:
             print(f"No file found with extension 'bmp' in '{path}'")
             return None

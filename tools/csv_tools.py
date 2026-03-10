@@ -1,6 +1,7 @@
 from PIL import Image
 import numpy as np
 from pathlib import Path
+import pandas as pd
 
 class CSV_Tools:
     PATH = ""
@@ -11,20 +12,27 @@ class CSV_Tools:
     def __init__(self):
         self.PATH = Path(__file__).parent.parent
     
-    def read(self):
+    def get_path(self):
         path = Path(self.PATH / self.INPUT_PATH)
 
         try:
             first_file = next(path.glob(self.EXTENSION_PATTERN))
             print(f"File found with extension 'csv' with path: '{first_file}'")
-            return open(first_file).read()
+            return first_file
         except StopIteration:
             print(f"No file found with extension 'csv' in '{path}'")
             return None
 
     def export(self, pixels: np.ndarray):
-        fixed_array = pixels.reshape(-1, pixels.shape[-1] if pixels.ndim == 3 else 1)
-        np.savetxt(Path(self.PATH / self.INPUT_PATH) / self.FILENAME, 
-                   fixed_array, 
-                   delimiter=",", 
-                   fmt='%d')
+         # Reshape the array for CSV export
+        if len(pixels.shape) == 3: # Color image (H, W, C)
+            # Reshape from 3D (height, width, channels) to 2D (height, width*channels)
+            height, width, channels = pixels.shape
+            img_array_reshape = pixels.reshape(height, width * channels)
+        else: # Grayscale image (H, W)
+            img_array_reshape = pixels
+
+        df = pd.DataFrame(img_array_reshape)
+        df.to_csv(Path(self.PATH / self.INPUT_PATH) / self.FILENAME, 
+                  header=False, 
+                  index=False)
