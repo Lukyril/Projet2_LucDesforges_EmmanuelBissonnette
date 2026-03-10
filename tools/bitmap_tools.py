@@ -4,7 +4,7 @@ from PIL import Image
 
 class BMP_Tools:
     PATH = ""
-    OUTPUT_PATH = "output/bmp"
+    OUTPUT_PATH = "output/"
     FILENAME = 'output_image.bmp'
     INPUT_PATH = "input/bmp/"
     EXTENSION_PATTERN = "*.bmp"
@@ -24,6 +24,5 @@ class BMP_Tools:
             return None
         
     def export(self, pixels: np.ndarray):
-        path = Path(self.PATH / self.INPUT_PATH  )
         image = Image.fromarray(pixels, mode='L')
-        image.save(path / self.FILENAME, format='BMP')
+        image.save(Path(self.PATH / self.OUTPUT_PATH) / self.FILENAME, format='BMP')
