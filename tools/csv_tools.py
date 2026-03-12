@@ -37,3 +37,9 @@ class CSV_Tools:
         df.to_csv(Path(self.PATH / self.INPUT_PATH) / self.FILENAME, 
                   header=False, 
                   index=False)
+        
+    def change_brightness_value(self, target_value, new_value):
+        csv = pd.read_csv(self.get_path(), header=None)
+        csv.replace(target_value, new_value, inplace=True)
+        csv_array = csv.to_numpy().astype(np.uint8)
+        self.export(csv_array)
