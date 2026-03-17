@@ -36,6 +36,8 @@ TODO
 <h2 id="project-files-description">Description de l'hierarchie des fichiers</h2>
 
 <ul>
+  <li><b>app.py</b> - Permet d'initialiser l'application</li>
+  <br/>
   <li><b>input</b> - Contient les fichiers à traiter</li>
   <li><b>output</b> - Contient le fichier résultat après le traitement</li>
   <li><b>tools</b> - Contient le fichiers de code utilisés pour le traitement</li>
