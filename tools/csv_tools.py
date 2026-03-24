@@ -25,9 +25,9 @@ class CSV_Tools:
         path = Path(self.PATH / self.INPUT_PATH)
 
         try:
-            first_file = next(path.glob(self.EXTENSION_PATTERN))
-            print(f"File found with extension 'csv' with path: '{first_file}'")
-            return first_file
+            first_found_filepath = next(path.glob(self.EXTENSION_PATTERN))
+            print(f"File found with extension 'csv' with path: '{first_found_filepath}'")
+            return first_found_filepath
         except StopIteration:
             print(f"No file found with extension 'csv' in '{path}'")
             return None
