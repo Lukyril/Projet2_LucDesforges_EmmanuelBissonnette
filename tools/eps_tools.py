@@ -9,12 +9,12 @@ from pathlib import Path
 import pandas as pd
 
 #J'ai décider de d'implémenter l'outil avec la structure de classe
-class CSV_Tools:
+class EPSTools:
     #Constantes utilisées pour trouver les chemin input output, et pour les noms de fichiers exportés
     PATH = ""
-    FILENAME = 'input.csv'
-    INPUT_PATH = "input/csv/"
-    EXTENSION_PATTERN = "*.csv"
+    FILENAME = 'input.eps'
+    INPUT_PATH = "input/eps/"
+    EXTENSION_PATTERN = "*.eps"
 
     #Permet d'initialiser l'outil comme objet encapsulé
     def __init__(self):
@@ -26,12 +26,13 @@ class CSV_Tools:
 
         try:
             first_found_filepath = next(path.glob(self.EXTENSION_PATTERN))
-            print(f"File found with extension 'csv' with path: '{first_found_filepath}'")
+            print(f"File found with extension 'eps' with path: '{first_found_filepath}'")
             return first_found_filepath
         except StopIteration:
-            print(f"No file found with extension 'csv' in '{path}'")
+            print(f"No file found with extension 'eps' in '{path}'")
             return None
     
+    #TODO
     #Permet d'exporter un csv à partir d'un array numpy (ndarray)  
     def export(self, pixels: np.ndarray):
          # Reshape the array for CSV export
@@ -47,9 +48,3 @@ class CSV_Tools:
         df.to_csv(Path(self.PATH / self.INPUT_PATH) / self.FILENAME, 
                   header=False, 
                   index=False)
-        
-    def change_brightness_value(self, target_value, new_value):
-        csv = pd.read_csv(self.get_path(), header=None)
-        csv.replace(target_value, new_value, inplace=True)
-        csv_array = csv.to_numpy().astype(np.uint8)
-        self.export(csv_array)
