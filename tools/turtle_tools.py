@@ -6,7 +6,7 @@ Description: Petit outil de dessing qui retourne un fichier\
 
 
 """
-#from PIL import Image
+
 import turtle
 
 
@@ -18,33 +18,33 @@ import turtle
 
 def pen_setup():
     """
-        description: Une fonction qui s'acctive au lancement et initialise la tortue du stylo avec\
+        description: Une fonction qui s'acctive dans la fonction final_controls_setup et initialise la tortue du stylo avec\
               les bon parametres
         entrees : aucune
         sorties: cree une tortue qui sert de stylo
     """
     global pen
-    pen = turtle.Turtle()
-    pen.color("black","red")
-    global pen_size
+    pen = turtle.Turtle()#Initialise la tortue.
+    pen.color("black","red")#Change la couleur du crayon tout en gardant le milleux rouge pour une meilleure visibilite.
+    global pen_size #Cette variable est utilise dans plusieur fonction je l'es donc mit en globale.
     pen_size=3
-    pen.pensize(pen_size)
-    pen.speed(10)
+    pen.pensize(pen_size)#Change la taille initiale du crayon.
+    pen.speed(10)#Defini la vitesse de base du crayon.
 
 def border_setup():
     """
-        description: Une fonction qui s'acctive au lancement et fait une bordure pour savoir ou dessine
+        description: Une fonction qui s'acctive dans la fonctio final_controls_setup et fait une bordure pour savoir ou dessine
         entrees : aucune
         sorties: cree une bordure graphique 
     """
-    border = turtle.Turtle()
-    border.hideturtle()
-    border.pensize(3)
-    border.speed(0)
-    border.penup()
-    border.setposition(-256,-256)
-    border.pendown()
-    for side in range(4):
+    border = turtle.Turtle() #Initialise la tortue.
+    border.hideturtle()#Rend la tortue invisible .
+    border.pensize(3)#Change la taille du crayon pour faire une bordure plus eppaise.
+    border.speed(0)#Change la vitesse de la tortue pour que le temps de chargment soit plus bas.
+    border.penup()#Souleve le stylo pour ne pas que la tortue laisse des trace en allant au coin.
+    border.setposition(-256,-256)#Teleporte la tortue au coin de la bordure.
+    border.pendown()#Depose le crayon pour que la tortue puisse faire la bordure.
+    for side in range(4):#Passe a travers les 4 cote dun carre pour les dessiner.
         border.forward(512)
         border.left(90)
 
@@ -71,16 +71,17 @@ def click_pen_size_down(x,y):
 
 def click_save(x,y):
      """
-    description: 
+    description: une fonction qui cree un fichier eps a partir du dessin du joueur
     entree: x,y sont obligatoir avec la fonction onclick mais ne sont pas utilisee
     sortie: un fichier eps contenant le dessin de lutlisateur.
     """
+     turtle.setup(512,512) #Reduit la taille de lecran pour ne recuperer que le dessins du joueur.
      turtle.hideturtle() #Cette commande cache la tortue pour ne pas la voir apparaitre dans le ficher eps
      turtle.getscreen().getcanvas().postscript(file='img.eps')# Cette commande cree un fichier eps du canevas \
                                                                 #get screen recupere lecran avec turtle get canvas \
                                                                 #recupere lecran complet avec le fond a laide de tkinter\
                                                                 #postscript converti et sauvegarde en post script le contenu de get screen et get canvas.
-
+     turtle.setup(512,600)# Remet lecran a sa taille initiale pour que les boutons soit accessible.
 def click_pen_up(x,y):
     """
     description: Cette fonction s'active lorsque le bouton penup est appuye elle souleve le crayon(empeche decrire).
@@ -112,18 +113,18 @@ def click_eraser (x,y):
     sortie: le crayon change de couleur et efface.
     """
     pen.color("white","red")#Change la trail du crayon tout en gardant le milleux rouge pour une meilleure visibilite.
-    
+
 def click_black(x,y):
     """
     description: Cette fonction s'active lorsque le bouton black est appuye elle met le stylo en noir pour ecrire.
     entree: x,y sont obligatoir avec la fonction onclick mais ne sont pas utilisee.
     sortie: le crayon change de couleur et ecrit
     """
-    pen.color("black","red")
+    pen.color("black","red")##Change la trail du crayon tout en gardant le milleux rouge pour une meilleure visibilite.
 
 def set_up_button():
     """
-    description: Cette fonction s'active des le lancement du code elle prend la liste turtle list et cree plusieur \
+    description: Cette fonction s'active dans la fonction final_controls_setupelle prend la liste turtle list et cree plusieur \
                     tortues avec les parametre dans cette meme liste soit nom ,fonction associee et coordonee \
     entree: Cette fonction na pas d'entree.
     sortie: Plusieur tortues et leur fonctionalitee.
@@ -159,16 +160,20 @@ def set_up_button():
 
         turtle_list[i][0].onclick(turtle_list[i][1]) #Cree le les touches du click et la fonction associe a chaque torute.
             
+def final_controls_setup():
+    """
+    description: Call toute les fonction pour creer les boutons, linterface graphique, et le stylo\
+                     elle initialise aussi le controle pour le stylo et la grosseur de lecran.
+    entrees:aucune
+    sorties:aucune
+    
+    """
+    turtle.setup(512,600)#Taille de lecran.
+    border_setup()
+    pen_setup()
+    pen.ondrag(click_behavior)#Permet de pouvoirs prendre et deplacer la torute pour dessiner.
+    set_up_button()
 
-#initialisation des touches
-turtle.setup(512,600)#Taille de lecran.
-border_setup()
-pen_setup()
-pen.ondrag(click_behavior)#Permet de pouvoirs prendre et deplacer la torute pour dessiner.
-set_up_button()
-
-
-#main
-
-input("")
+final_controls_setup()
+input("")#Fait en sorte que le code ne termine jamais 
 
