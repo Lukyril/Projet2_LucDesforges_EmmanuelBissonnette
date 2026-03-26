@@ -75,8 +75,11 @@ def click_save(x,y):
     entree: x,y sont obligatoir avec la fonction onclick mais ne sont pas utilisee
     sortie: un fichier eps contenant le dessin de lutlisateur.
     """
-     turtle.hideturtle()
-     turtle.getscreen().getcanvas().postscript(file='img.eps')
+     turtle.hideturtle() #Cette commande cache la tortue pour ne pas la voir apparaitre dans le ficher eps
+     turtle.getscreen().getcanvas().postscript(file='img.eps')# Cette commande cree un fichier eps du canevas \
+                                                                #get screen recupere lecran avec turtle get canvas \
+                                                                #recupere lecran complet avec le fond a laide de tkinter\
+                                                                #postscript converti et sauvegarde en post script le contenu de get screen et get canvas.
 
 def click_pen_up(x,y):
     """
@@ -84,7 +87,7 @@ def click_pen_up(x,y):
     entree: x,y sont obligatoir avec la fonction onclick mais ne sont pas utilisee
     sortie: le crayon arrette d'ecrire.
     """
-    pen.penup()
+    pen.penup()#Une fonction qui souleve le stylo ou arrette decrire.
 
 def click_pen_down(x,y):
     """
@@ -92,7 +95,7 @@ def click_pen_down(x,y):
     entree: x,y sont obligatoir avec la fonction onclick mais ne sont pas utilisee.
     sortie: le crayon recomance a ecrire.
     """
-    pen.pendown()
+    pen.pendown()#Une fonction qui depose le stylo ou recommance a ecrire.
 
 def click_behavior(x , y):
    """
@@ -100,7 +103,7 @@ def click_behavior(x , y):
     entree: x,y sont utilise pour savoir ou est la souris et la suivre avec le stylo.
     sortie: Le crayon suit la souris.
     """
-   pen.setposition(x,y)
+   pen.setposition(x,y)# Teleporte le stylo a lendroit du click avec les entree x,y
     
 def click_eraser (x,y):
     """
@@ -108,7 +111,8 @@ def click_eraser (x,y):
     entree: x,y sont obligatoir avec la fonction onclick mais ne sont pas utilisee.
     sortie: le crayon change de couleur et efface.
     """
-    pen.color("white","red")
+    pen.color("white","red")#Change la trail du crayon tout en gardant le milleux rouge pour une meilleure visibilite.
+    
 def click_black(x,y):
     """
     description: Cette fonction s'active lorsque le bouton black est appuye elle met le stylo en noir pour ecrire.
