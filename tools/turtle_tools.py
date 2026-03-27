@@ -156,7 +156,7 @@ def set_up_button():
         turtle_list[i][0].write(turtle_text,align="center",font=("Courier", 15, "bold"))#Chaque turtle ecrit le contenu de la variable avant quelle \
         #ecrasee donc turtle_text.
 
-        turtle_list[i][0].color("")#Cache la turtle pour laisser place au texte plus tard.
+        turtle_list[i][0].color("")#Change la couleur de la turtle en transparent  pour laisser place au texte plus tard.
 
         turtle_list[i][0].onclick(turtle_list[i][1]) #Cree le les touches du click et la fonction associe a chaque torute.
             
@@ -169,6 +169,7 @@ def final_controls_setup():
     
     """
     turtle.setup(512,600)#Taille de lecran.
+    turtle.title("Sketch a Turt")# Change le nom de la console tortle pour le nom du jeux
     border_setup()
     pen_setup()
     pen.ondrag(click_behavior)#Permet de pouvoirs prendre et deplacer la torute pour dessiner.
