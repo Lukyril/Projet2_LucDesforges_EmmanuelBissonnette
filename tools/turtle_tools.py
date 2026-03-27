@@ -160,7 +160,7 @@ def set_up_button():
 
         turtle_list[i][0].onclick(turtle_list[i][1]) #Cree le les touches du click et la fonction associe a chaque torute.
             
-def final_controls_setup():
+def final_setup():
     """
     description: Call toute les fonction pour creer les boutons, linterface graphique, et le stylo\
                      elle initialise aussi le controle pour le stylo et la grosseur de lecran.
@@ -175,6 +175,6 @@ def final_controls_setup():
     pen.ondrag(click_behavior)#Permet de pouvoirs prendre et deplacer la torute pour dessiner.
     set_up_button()
 
-final_controls_setup()
+final_setup()
 input("")#Fait en sorte que le code ne termine jamais 
 
