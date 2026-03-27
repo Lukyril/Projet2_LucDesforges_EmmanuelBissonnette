@@ -77,7 +77,7 @@ def click_save(x,y):
     """
      turtle.setup(512,512) #Reduit la taille de lecran pour ne recuperer que le dessins du joueur.
      turtle.hideturtle() #Cette commande cache la tortue pour ne pas la voir apparaitre dans le ficher eps
-     turtle.getscreen().getcanvas().postscript(file='img.eps')# Cette commande cree un fichier eps du canevas \
+     turtle.getscreen().getcanvas().postscript(file="img.eps")# Cette commande cree un fichier eps du canevas \
                                                                 #get screen recupere lecran avec turtle get canvas \
                                                                 #recupere lecran complet avec le fond a laide de tkinter\
                                                                 #postscript converti et sauvegarde en post script le contenu de get screen et get canvas.
