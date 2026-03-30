@@ -9,17 +9,14 @@ Description: Petit outil de dessing qui retourne un fichier\
 
 import turtle
 
-
-
-
-
+from pathlib import Path
 
 #fonctions
 
 def pen_setup():
     """
         description: Une fonction qui s'acctive dans la fonction final_controls_setup et initialise la tortue du stylo avec\
-              les bon parametres
+              les bon parametres    
         entrees : aucune
         sorties: cree une tortue qui sert de stylo
     """
@@ -77,11 +74,14 @@ def click_save(x,y):
     """
      turtle.setup(512,512) #Reduit la taille de lecran pour ne recuperer que le dessins du joueur.
      turtle.hideturtle() #Cette commande cache la tortue pour ne pas la voir apparaitre dans le ficher eps
-     turtle.getscreen().getcanvas().postscript(file="img.eps")# Cette commande cree un fichier eps du canevas \
+     screen = turtle.getscreen()
+     canvas = screen.getcanvas()
+     canvas.postscript(file=Path(__file__).parent.parent / "input/eps/" / 'input.eps')# Cette commande cree un fichier eps du canevas \
                                                                 #get screen recupere lecran avec turtle get canvas \
                                                                 #recupere lecran complet avec le fond a laide de tkinter\
                                                                 #postscript converti et sauvegarde en post script le contenu de get screen et get canvas.
      turtle.setup(512,600)# Remet lecran a sa taille initiale pour que les boutons soit accessible.
+
 def click_pen_up(x,y):
     """
     description: Cette fonction s'active lorsque le bouton penup est appuye elle souleve le crayon(empeche decrire).
