@@ -5,7 +5,7 @@ Description : Contient les fonctionalités pour l'exportation de fichier bmp et 
 """ 
 from PIL import Image
 
-import tools.bitmap_tools as bmpt
+import tools.bmp_tools as bmpt
 import tools.csv_tools as csvt
 import pandas as pd
 import numpy as np
