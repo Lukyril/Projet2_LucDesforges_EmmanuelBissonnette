@@ -24,6 +24,11 @@ class CSV_Tools(ft.File_Tools):
 
 
     # Permet d'exporter un csv à partir d'un array numpy (ndarray).  
+    """
+    description: 
+    entree: 
+    sortie:
+    """
     def export(self, pixels: np.ndarray):
 
         # Algorithme de lecture du array afin de s'assurer 
@@ -43,6 +48,11 @@ class CSV_Tools(ft.File_Tools):
                   index=False)
         
 
+    """
+    description: 
+    entree: 
+    sortie:
+    """
     def change_brightness_value(self, target_value, new_value):
         csv = pd.read_csv(self.get_path(), header=None)
         csv.replace(target_value, new_value, inplace=True)
