@@ -5,11 +5,11 @@ Description : Contient les fonctionalités pour le traitement de fichier
 """
 from pathlib import Path
 
-#J'ai décider de d'implémenter l'outil avec la structure de classe
+# Classe mère héritée par les classes outils qui gèrent les fichiers.
 class File_Tools:
 
-    #Constantes utilisées pour trouver les chemins 
-    # input output, et pour les noms de fichiers exportés
+    # Constantes utilisées pour trouver les chemins 
+    # input output, et pour les noms de fichiers exportés.
     path_components = { 
         "path": "" ,
         "FILENAME" : 'input.txt',
@@ -18,12 +18,14 @@ class File_Tools:
         "EXTENSION" : "TXT"
     }
     
-    #Permet d'initialiser l'outil comme objet encapsulé
+    
+    # Permet d'initialiser l'outil comme objet encapsulé.
     def __init__(self):
         self.path_components["path"] = Path(__file__).parent.parent
     
-    #Permet de chercher et de retourner le chemin vers le fichier csv 
-    # dans le dossier input
+
+    # Permet de chercher et de retourner le chemin vers le fichier csv 
+    # dans le dossier input.
     def get_path(self):
         comp = self.path_components
         path = Path(comp["path"] / comp["INPUT_PATH"])

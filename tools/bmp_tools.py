@@ -9,10 +9,10 @@ from PIL import Image
 import tools.file_tools as ft
 import numpy as np
 
-#J'ai décider de d'implémenter l'outil avec la structure de classe
+#Hérite de la class mère File_Tools
 class BMP_Tools(ft.File_Tools):
+    
     #Constantes utilisées pour trouver les chemin input output, et pour les noms de fichiers exportés
-
     path_components = { 
         "path": "" ,
         "FILENAME" : 'output_image.bmp',
@@ -21,8 +21,12 @@ class BMP_Tools(ft.File_Tools):
         "EXTENSION_PATTERN" : "*.bmp",
         "EXTENSION" : "BMP"
     }
+           
             
     #Permet d'exporter une image à partir d'un array numpy (ndarray)  
     def export(self, pixels: np.ndarray):
-        image = Image.fromarray(pixels, mode='L')
-        image.save(Path(self.path_components["path"] / self.path_components["OUTPUT_PATH"]) / self.path_components["FILENAME"], format=self.path_components["EXTENSION"])
+        image = Image.fromarray(pixels, mode = 'L')
+        image.save(Path(self.path_components["path"] / 
+                        self.path_components["OUTPUT_PATH"]) / 
+                        self.path_components["FILENAME"], 
+                    format = self.path_components["EXTENSION"])

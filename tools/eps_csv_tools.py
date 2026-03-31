@@ -18,6 +18,7 @@ class EPS_CSV_Tools:
         self.eps_tools = epst.EPS_Tools()
         self.csv_tools = csvt.CSV_Tools()
     
+    
     #Permet de convertir et d'exporter un fichier bmp en un fichier csv
     def convert_eps_to_bmp(self):
         img = Image.open(self.eps_tools.get_path())

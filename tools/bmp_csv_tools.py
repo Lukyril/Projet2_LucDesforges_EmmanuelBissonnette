@@ -19,6 +19,7 @@ class BMP_CSV_Tools:
         self.bmp_tools = bmpt.BMP_Tools()
         self.csv_tools = csvt.CSV_Tools()
         
+
     #Permet de convertir et d'exporter un fichier bmp en un fichier csv
     def convert_bmp_to_csv(self):
         img = Image.open(self.bmp_tools.get_path())
@@ -26,6 +27,7 @@ class BMP_CSV_Tools:
         img_array = np.asarray(img, dtype = int)
 
         self.csv_tools.export(img_array)
+        
         
     #Permet de convertir et d'exporter un fichier csv en un fichier bmp
     def convert_csv_to_bmp(self, height = 20, width = 10, mode = 'L'):
