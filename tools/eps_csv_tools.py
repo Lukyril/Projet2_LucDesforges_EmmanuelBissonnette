@@ -1,7 +1,8 @@
 """
 Auteur : Luc Desforges
 Date : 17 mars 2026
-Description : Contient les fonctionalités pour l'exportation de fichier bmp et csv à partir de l'un et l'autre
+Description : Contient les fonctionalités 
+pour l'exportation de fichier bmp et csv à partir de l'un et l'autre
 """ 
 
 from PIL import Image
@@ -18,7 +19,7 @@ class EPS_CSV_Tools:
         self.eps_tools = epst.EPS_Tools()
         self.csv_tools = csvt.CSV_Tools()
     
-    
+
     #Permet de convertir et d'exporter un fichier bmp en un fichier csv
     def convert_eps_to_bmp(self):
         img = Image.open(self.eps_tools.get_path())
