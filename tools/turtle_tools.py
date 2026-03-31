@@ -15,8 +15,8 @@ from pathlib import Path
 
 def pen_setup():
     """
-        description: Une fonction qui s'acctive dans la fonction final_controls_setup et initialise la tortue du stylo avec\
-              les bon parametres    
+        description: Une fonction qui s'acctive dans la fonction 
+        final_controls_setup et initialise la tortue du stylo avec les bon parametres    
         entrees : aucune
         sorties: cree une tortue qui sert de stylo
     """
