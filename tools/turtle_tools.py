@@ -221,8 +221,6 @@ def final_setup():
     #Permet de pouvoirs prendre et deplacer la torute pour dessiner.
     pen.ondrag(click_behavior)
     set_up_button()
-    click_save
-final_setup()
 #Fait en sorte que le code ne termine jamais 
 input("")
 

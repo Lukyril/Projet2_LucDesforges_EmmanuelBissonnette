@@ -5,7 +5,10 @@ import tools.turtle_tools as turtle_tools
 global is_saved 
 is_saved = False
 def save_convert():
+    global is_saved 
     is_saved = True
+
+
 turtle_tools.final_setup()
 
 while True:
