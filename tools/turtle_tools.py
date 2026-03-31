@@ -8,7 +8,7 @@ Description: Petit outil de dessing qui retourne un fichier\
 """
 
 import turtle
-
+import app
 from pathlib import Path
 
 #fonctions
@@ -109,6 +109,7 @@ def click_save(x,y):
      canvas.postscript(file=Path(__file__).parent.parent / "input/eps/" / 'input.eps')
     # Remet lecran a sa taille initiale pour que les boutons soit accessible.                                            
      turtle.setup(512,600)
+     app.save_convert()
 
 def click_pen_up(x,y):
     """
@@ -220,7 +221,7 @@ def final_setup():
     #Permet de pouvoirs prendre et deplacer la torute pour dessiner.
     pen.ondrag(click_behavior)
     set_up_button()
-
+    click_save
 final_setup()
 #Fait en sorte que le code ne termine jamais 
 input("")
