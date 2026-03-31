@@ -9,7 +9,8 @@ import tools.file_tools as ft
 #J'ai décider de d'implémenter l'outil avec la structure de classe
 class EPS_Tools(ft.File_Tools):
 
-    #Constantes utilisées pour trouver les chemin input output, et pour les noms de fichiers exportés
+    #Constantes utilisées pour trouver les chemins 
+    # input output, et pour les noms de fichiers exportés
     path_components = { 
         "path": "" ,
         "FILENAME" : 'input.eps',

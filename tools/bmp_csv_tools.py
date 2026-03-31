@@ -1,7 +1,8 @@
 """
 Auteur : Luc Desforges
 Date : 17 mars 2026
-Description : Contient les fonctionalités pour l'exportation de fichier bmp et csv à partir de l'un et l'autre
+Description : Contient les fonctionalités pour l'exportation de fichier bmp et 
+csv à partir de l'un et l'autre
 """ 
 from PIL import Image
 

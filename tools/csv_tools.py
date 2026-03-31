@@ -12,7 +12,8 @@ from pathlib import Path
 #J'ai décider de d'implémenter l'outil avec la structure de classe
 class CSV_Tools(ft.File_Tools):
 
-    #Constantes utilisées pour trouver les chemin input output, et pour les noms de fichiers exportés
+    #Constantes utilisées pour trouver les chemins 
+    # input output, et pour les noms de fichiers exportés
     path_components = { 
         "path": "" ,
         "FILENAME" : 'input.csv',
@@ -33,7 +34,8 @@ class CSV_Tools(ft.File_Tools):
             img_array_reshape = pixels
 
         df = pd.DataFrame(img_array_reshape)
-        df.to_csv(Path(self.path_components["path"] / self.path_components["INPUT_PATH"]) / self.path_components["FILENAME"], 
+        comp = self.path_components
+        df.to_csv(Path(comp["path"] / comp["INPUT_PATH"]) / comp["FILENAME"], 
                   header=False, 
                   index=False)
         
