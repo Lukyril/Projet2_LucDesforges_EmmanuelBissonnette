@@ -14,22 +14,16 @@ import numpy as np
 #J'ai décider de d'implémenter l'outil avec la structure de classe
 class EPS_CSV_Tools:
 
-    #Permet d'initialiser l'outil comme objet encapsulé
     """
-    description: 
-    entree: 
-    sortie:
+    description: Permet d'initialiser l'outil comme objet encapsulé
     """
     def __init__(self):
         self.eps_tools = epst.EPS_Tools()
         self.csv_tools = csvt.CSV_Tools()
     
 
-    #Permet de convertir et d'exporter un fichier bmp en un fichier csv
     """
-    description: 
-    entree: 
-    sortie:
+    description: Permet de convertir et d'exporter un fichier bmp en un fichier csv
     """
     def convert_eps_to_bmp(self):
         img = Image.open(self.eps_tools.get_path())

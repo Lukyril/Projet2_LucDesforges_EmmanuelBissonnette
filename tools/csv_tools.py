@@ -23,11 +23,10 @@ class CSV_Tools(ft.File_Tools):
     }
 
 
-    # Permet d'exporter un csv à partir d'un array numpy (ndarray).  
     """
-    description: 
+    description: Permet d'exporter un csv à partir d'un array numpy (ndarray).
+      
     entree: 
-    sortie:
     """
     def export(self, pixels: np.ndarray):
 

@@ -18,48 +18,43 @@ class File_Tools:
         "EXTENSION" : "TXT"
     }
 
-    msg_extension = ""
-    msg_path = ""
-
     # Dictionaire de messages
     messages = {
         "FileFound": 
-        f"File found with extension '{msg_extension}' with path: '{msg_path}'",
+        "File found with extension '{msg_extension}' with path: '{msg_path}'",
         "StopIteration": 
-        f"No file found with extension '{msg_extension}' in '{msg_path}'"
+        "No file found with extension '{msg_extension}' in '{msg_path}'"
     }
 
 
-    # Permet d'initialiser l'outil comme objet encapsulé.
-    """
-    description: 
-    entree: 
-    sortie:
-    """
+
     def __init__(self):
+        """
+        description: Permet d'initialiser l'outil comme objet encapsulé.
+        """
         self.path_components["path"] = Path(__file__).parent.parent
     
 
-    # Permet de chercher et de retourner le chemin vers le fichier csv 
-    # dans le dossier input.
-    """
-    description: 
-    entree: 
-    sortie:
-    """
+
     def get_path(self):
+        '''
+        description: Permet de chercher et de retourner 
+        le chemin vers le fichier csv dans le dossier input.
+
+        sortie: le chemin dynamique du fichier
+        '''
         comp = self.path_components
         path = Path(comp["path"] / comp["INPUT_PATH"])
 
-        self.msg_path = path
-        self.msg_extension = comp["EXTENSION"]
+        msg_path = path
+        msg_extension = comp["EXTENSION"]
 
         try:
             first_found_filepath = next(path.glob(comp["EXTENSION_PATTERN"]))
-            print(self.messages["FileFound"])
+            print(self.messages["FileFound"].format(msg_path = msg_path, 
+                                                    msg_extension = msg_extension))
             return first_found_filepath
         except StopIteration:
-            self.msg_extension = comp["EXTENSION"]
-            self.msg_path = path
-            print(self.messages["StopIteration"])
+            print(self.messages["StopIteration"].format(msg_path = msg_path, 
+                                                        msg_extension = msg_extension))
             return None
