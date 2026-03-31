@@ -29,14 +29,24 @@ class File_Tools:
         f"No file found with extension '{msg_extension}' in '{msg_path}'"
     }
 
-    
+
     # Permet d'initialiser l'outil comme objet encapsulé.
+    """
+    description: 
+    entree: 
+    sortie:
+    """
     def __init__(self):
         self.path_components["path"] = Path(__file__).parent.parent
     
 
     # Permet de chercher et de retourner le chemin vers le fichier csv 
     # dans le dossier input.
+    """
+    description: 
+    entree: 
+    sortie:
+    """
     def get_path(self):
         comp = self.path_components
         path = Path(comp["path"] / comp["INPUT_PATH"])

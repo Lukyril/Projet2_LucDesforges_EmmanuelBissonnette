@@ -32,13 +32,22 @@ class BMP_CSV_Tools:
     }
 
 
-    #Permet d'initialiser l'outil comme objet encapsulé
+    
+    """
+    description: Permet d'initialiser l'outil comme objet encapsulé
+    entree: 
+    sortie:
+    """
     def __init__(self):
         self.bmp_tools = bmpt.BMP_Tools()
         self.csv_tools = csvt.CSV_Tools()
         
 
-    #Permet de convertir et d'exporter un fichier bmp en un fichier csv
+    """
+    description: Permet de convertir et d'exporter un fichier bmp en un fichier csv
+    entree: 
+    sortie:
+    """
     def convert_bmp_to_csv(self):
         img = Image.open(self.bmp_tools.get_path())
         img = img.convert('L')
@@ -47,7 +56,11 @@ class BMP_CSV_Tools:
         self.csv_tools.export(img_array)
         
 
-    #Permet de convertir et d'exporter un fichier csv en un fichier bmp
+    """
+    description: Permet de convertir et d'exporter un fichier csv en un fichier bmp
+    entree: 
+    sortie:
+    """
     def convert_csv_to_bmp(self, height = 20, width = 10, mode = 'L'):
         try:
             csv = pd.read_csv(self.csv_tools.get_path(), header=None)
