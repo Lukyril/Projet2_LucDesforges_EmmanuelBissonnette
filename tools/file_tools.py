@@ -17,7 +17,18 @@ class File_Tools:
         "EXTENSION_PATTERN" : "*.txt",
         "EXTENSION" : "TXT"
     }
-    
+
+    msg_extension = ""
+    msg_path = ""
+
+    # Dictionaire de messages
+    messages = {
+        "FileFound": 
+        f"File found with extension '{msg_extension}' with path: '{msg_path}'",
+        "StopIteration": 
+        f"No file found with extension '{msg_extension}' in '{msg_path}'"
+    }
+
     
     # Permet d'initialiser l'outil comme objet encapsulé.
     def __init__(self):
@@ -29,11 +40,16 @@ class File_Tools:
     def get_path(self):
         comp = self.path_components
         path = Path(comp["path"] / comp["INPUT_PATH"])
-        
+
+        self.msg_path = path
+        self.msg_extension = comp["EXTENSION"]
+
         try:
             first_found_filepath = next(path.glob(comp["EXTENSION_PATTERN"]))
-            print(f"File found with extension '{comp["EXTENSION"]}' with path: '{first_found_filepath}'")
+            print(self.messages["FileFound"])
             return first_found_filepath
         except StopIteration:
-            print(f"No file found with extension '{comp["EXTENSION"]}' in '{path}'")
+            self.msg_extension = comp["EXTENSION"]
+            self.msg_path = path
+            print(self.messages["StopIteration"])
             return None
