@@ -41,21 +41,24 @@ Logiciel de dessin qui peut exporter une image en bitmap a partir d'un eps et un
 <h3>À l'intérieur de tools</h3>
 <ul>
   <h3>Fichiers</h3>
-    <li><b>bitmap_tools.py</b> - Contient les fonctionalités pour le traitement de fichier bmp</li>
-    <li><b>bmp_csv_tools.py</b> - Contient les fonctionalités pour l'exportation de fichier bmp et csv à partir de l'un et l'autre</li>
+    <li><b>file_tools.py</b> - Classe mère qui contient les fonctionalités de base le traitement pour de fichier</li>
+    <li><b>bmp_tools.py</b> - Contient les fonctionalités pour le traitement de fichier bmp</li>
     <li><b>csv_tools.py</b> - Contient les fonctionalités pour le traitement de fichier csv</li>
+    <li><b>eps_tools.py</b> - Contient les fonctionalités pour le traitement de fichier eps</li>
     <li><b>turtle_tools.py</b> - Contient les fonctionalités turtle </li>
+    <li><b>bmp_csv_tools.py</b> - Contient les fonctionalités pour l'exportation de fichier bmp et csv à partir de l'un et l'autre</li>
+    <li><b>eps_csv_tools.py</b> - Contient les fonctionalités pour l'exportation de fichier eps et csv à partir de l'un et l'autre</li>
 </ul>
 
 <!-- GETTING STARTED -->
 <h2 id="getting-started">Pour commencer</h2>
-<h3>Pour tester les fonctionalités du projet, vous devez TODO.</h3>
+<h3>Pour tester les fonctionalités du projet, vous devez: </h3>
 <ol>
   <li>Lancer app.py</li>
   <li>Trainer la souris pour dessiner</li>
   <li>Pour sauvegarder appuyez sur le bouton sauvegarde</li>
   <li>Pour exporter appuyer sur le x aux coin de la page turtle</li>
-<ol>
+</ol>
 
 <!-- CREDITS -->
 <h2 id="credits">Références</h2>
