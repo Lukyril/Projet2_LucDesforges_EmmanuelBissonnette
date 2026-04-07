@@ -60,9 +60,6 @@ Logiciel de dessin qui peut exporter une image en bitmap a partir d'un eps et un
   <li>Pour exporter appuyer sur le x aux coin de la page turtle</li>
 </ol>
 
-<!-- CREDITS -->
-<h2 id="credits">Références</h2>
-
 ## Entree sorties
   entrée : fichier eps et fichier csv   
   Sortie : fichier bmp et ficher csv
