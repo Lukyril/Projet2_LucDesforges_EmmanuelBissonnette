@@ -19,8 +19,6 @@
   </ol>
 </details>
 
-
-
 <!-- OVERVIEW -->
 <h2 id="overview">Sommaire</h2>
 
@@ -61,3 +59,19 @@ TODO
 <!-- CREDITS -->
 <h2 id="credits">Références</h2>
 TODO
+
+
+
+## But
+
+  Realiser un logiciel de dessin qui peut exporter une image en bitmap a partir dun eps et un csv lutilisateur peut utiliser plusieurs outils de dessins comme une efface un crayon noir et pouvoir modifier la taille du crayon se qui permet dexprimer librement sa creativite
+
+## Manuel d'instruction
+  1 lancer le programme  
+  2 trainer la souris pour dessiner   
+  3 pour sauvegarder appuyez sur le bouton sauvegarde   
+  4 pour exporter appuyer sur le x aux coin de la page 
+
+## Entree sorties
+  entree : fichier Eps et fichier CSV   
+  Sortie : fichier Bmp et ficher CSV
