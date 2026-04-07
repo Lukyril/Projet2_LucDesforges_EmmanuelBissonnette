@@ -23,11 +23,9 @@ class CSV_Tools(ft.File_Tools):
     }
 
 
-
     def export(self, pixels: np.ndarray):
         """
         description: Permet d'exporter un csv à partir d'un "ndarray".
-        
         entree: un array numpy equivalent aux pixels d'un image
         """
         # Algorithme de lecture du array afin de s'assurer 
@@ -45,7 +43,6 @@ class CSV_Tools(ft.File_Tools):
         df.to_csv(Path(comp["path"] / comp["INPUT_PATH"]) / comp["FILENAME"], 
                   header=False, 
                   index=False)
-        
 
 
     def change_brightness_value(self, target_value, new_value):

@@ -18,7 +18,6 @@ class EPS_CSV_Tools:
         """
         description: Permet d'initialiser l'outil comme objet encapsulé
         """
-
         self.eps_tools = epst.EPS_Tools()
         self.csv_tools = csvt.CSV_Tools()
     
@@ -27,7 +26,6 @@ class EPS_CSV_Tools:
         """
         description: Permet de convertir et d'exporter un fichier bmp en un fichier csv
         """
-
         img = Image.open(self.eps_tools.get_path())
         scale_factor = 4  # e.g., scale 4x the default resolution
         img.load(scale = scale_factor) 

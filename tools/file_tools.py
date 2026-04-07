@@ -27,7 +27,6 @@ class File_Tools:
     }
 
 
-
     def __init__(self):
         """
         description: Permet d'initialiser l'outil comme objet encapsulé.
@@ -35,14 +34,12 @@ class File_Tools:
         self.path_components["path"] = Path(__file__).parent.parent
     
 
-
     def get_path(self):
-        '''
+        """"
         description: Permet de chercher et de retourner 
         le chemin vers le fichier csv dans le dossier input.
-
         sortie: le chemin dynamique du fichier
-        '''
+        """
         comp = self.path_components
         path = Path(comp["path"] / comp["INPUT_PATH"])
 

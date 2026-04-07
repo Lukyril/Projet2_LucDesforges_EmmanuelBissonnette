@@ -45,7 +45,8 @@ class BMP_CSV_Tools:
 
     def convert_bmp_to_csv(self):
         """
-        description: Permet de convertir et d'exporter un fichier bmp en un fichier csv
+        description: Permet de convertir et d'exporter 
+        un fichier bmp en un fichier csv
         """
         img = Image.open(self.bmp_tools.get_path())
         img = img.convert('L')
@@ -59,7 +60,6 @@ class BMP_CSV_Tools:
         """
         description: Permet de convertir et d'exporter 
         un fichier csv en un fichier bmp
-
         entree: height : la hauteur de l'image, width L la largeur de l'image, 
         mode : le mode d'image (gris, en couleurs)
         """
