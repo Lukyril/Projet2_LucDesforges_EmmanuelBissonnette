@@ -24,11 +24,12 @@ class BMP_Tools(ft.File_Tools):
     }
            
             
-    """
-    description: Permet d'exporter une image à partir d'un array numpy (ndarray).
-    entree: pixels : un array contenant l'équivalent des pixels
-    """
+
     def export(self, pixels: np.ndarray):
+        """
+        description: Permet d'exporter une image à partir d'un array numpy (ndarray).
+        entree: pixels : un array contenant l'équivalent des pixels
+        """
         image = Image.fromarray(pixels, mode = 'L')
         image.save(Path(self.path_components["path"] / 
                         self.path_components["OUTPUT_PATH"]) / 

@@ -33,18 +33,20 @@ class BMP_CSV_Tools:
 
 
     
-    """
-    description: Permet d'initialiser l'outil comme objet encapsulé
-    """
     def __init__(self):
+        """
+        description: Permet d'initialiser l'outil comme objet encapsulé
+        """
+
         self.bmp_tools = bmpt.BMP_Tools()
         self.csv_tools = csvt.CSV_Tools()
         
 
-    """
-    description: Permet de convertir et d'exporter un fichier bmp en un fichier csv
-    """
+
     def convert_bmp_to_csv(self):
+        """
+        description: Permet de convertir et d'exporter un fichier bmp en un fichier csv
+        """
         img = Image.open(self.bmp_tools.get_path())
         img = img.convert('L')
         img_array = np.asarray(img, dtype = int)
@@ -52,11 +54,15 @@ class BMP_CSV_Tools:
         self.csv_tools.export(img_array)
         
 
-    """
-    description: Permet de convertir et d'exporter un fichier csv en un fichier bmp
-    entree: height : la hauteur de l'image, width L la largeur de l'image, mode : le mode d'image (gris, en couleurs)
-    """
+
     def convert_csv_to_bmp(self, height = 20, width = 10, mode = 'L'):
+        """
+        description: Permet de convertir et d'exporter 
+        un fichier csv en un fichier bmp
+
+        entree: height : la hauteur de l'image, width L la largeur de l'image, 
+        mode : le mode d'image (gris, en couleurs)
+        """
         try:
             csv = pd.read_csv(self.csv_tools.get_path(), header=None)
             csv_array = csv.to_numpy().astype(np.uint8)
