@@ -52,8 +52,13 @@ TODO
 
 <!-- GETTING STARTED -->
 <h2 id="getting-started">Pour commencer</h2>
-<h3>Pour tester les fonctionalités du projet, vous devez TODO.
-</h3><h3>TODO</h3>
+<h3>Pour tester les fonctionalités du projet, vous devez TODO.</h3>
+<ol>
+  <li> 1 Lancer app.py</li>
+  <li> 2 Trainer la souris pour dessiner</li>
+  <li> 3 Pour sauvegarder appuyez sur le bouton sauvegarde</li>
+  <li> 4 Pour exporter appuyer sur le x aux coin de la page turtle</li>
+<ol>
 
 
 <!-- CREDITS -->
@@ -64,14 +69,14 @@ TODO
 
 ## But
 
-  Realiser un logiciel de dessin qui peut exporter une image en bitmap a partir dun eps et un csv lutilisateur peut utiliser plusieurs outils de dessins comme une efface un crayon noir et pouvoir modifier la taille du crayon se qui permet dexprimer librement sa creativite
+  Réaliser un logiciel de dessin qui peut exporter une image en bitmap a partir d'un eps et un csv l'utilisateur peut utiliser plusieurs outils de dessins comme une efface, un crayon noir et pouvoir modifier la taille du crayon se qui permet dexprimer librement sa creativité
 
 ## Manuel d'instruction
-  1 lancer le programme  
-  2 trainer la souris pour dessiner   
-  3 pour sauvegarder appuyez sur le bouton sauvegarde   
-  4 pour exporter appuyer sur le x aux coin de la page 
+  1 Lancer app.py
+  2 Trainer la souris pour dessiner
+  3 Pour sauvegarder appuyez sur le bouton sauvegarde
+  4 Pour exporter appuyer sur le x aux coin de la page turtle
 
 ## Entree sorties
-  entree : fichier Eps et fichier CSV   
-  Sortie : fichier Bmp et ficher CSV
+  entrée : fichier eps et fichier csv   
+  Sortie : fichier bmp et ficher csv
