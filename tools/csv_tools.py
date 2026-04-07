@@ -23,14 +23,11 @@ class CSV_Tools(ft.File_Tools):
     }
 
 
-    # Permet d'exporter un csv à partir d'un array numpy (ndarray).  
-    """
-    description: 
-    entree: 
-    sortie:
-    """
     def export(self, pixels: np.ndarray):
-
+        """
+        description: Permet d'exporter un csv à partir d'un "ndarray".
+        entree: un array numpy equivalent aux pixels d'un image
+        """
         # Algorithme de lecture du array afin de s'assurer 
         # qu'il soit conforme pour l'exporter en csv en 2D (sans couleurs).
         if len(pixels.shape) == 3: # Color image (H, W, C)
@@ -46,14 +43,14 @@ class CSV_Tools(ft.File_Tools):
         df.to_csv(Path(comp["path"] / comp["INPUT_PATH"]) / comp["FILENAME"], 
                   header=False, 
                   index=False)
-        
 
-    """
-    description: 
-    entree: 
-    sortie:
-    """
+
     def change_brightness_value(self, target_value, new_value):
+        """
+        description: Permet de convertir un ton de gris vers 
+        un autre ton de gris dans un fichier csv
+        entree: target_value: ton à convertir, new_value: ton converti
+        """
         csv = pd.read_csv(self.get_path(), header=None)
         csv.replace(target_value, new_value, inplace=True)
         csv_array = csv.to_numpy().astype(np.uint8)

@@ -3,8 +3,6 @@ Auteur : Emmanuel Bissonnette
 Date : 3/26/2026
 Description: Petit outil de dessing qui retourne un fichier\
       eps en sauvegardant le tout realise avec turtle 
-
-
 """
 
 import turtle
@@ -16,11 +14,11 @@ is_saved = False
 
 def pen_setup():
     """
-        description: Une fonction qui s'acctive dans la fonction 
-        final_controls_setup et initialise la tortue du stylo avec les 
-        bon parametres    
-        entrees : aucune
-        sorties: cree une tortue qui sert de stylo
+    description: Une fonction qui s'acctive dans la fonction 
+    final_controls_setup et initialise la tortue du stylo avec les 
+    bon parametres    
+    entrees : aucune
+    sorties: cree une tortue qui sert de stylo
     """
     global pen
     #Initialise la tortue.
@@ -36,12 +34,13 @@ def pen_setup():
     #Defini la vitesse de base du crayon.
     pen.speed(10)
 
+
 def border_setup():
     """
-        description: Une fonction qui s'acctive dans la fonctio 
-        final_controls_setup et fait une bordure pour savoir ou dessine
-        entrees : aucune
-        sorties: cree une bordure graphique 
+    description: Une fonction qui s'acctive dans la fonctio 
+    final_controls_setup et fait une bordure pour savoir ou dessine
+    entrees : aucune
+    sorties: cree une bordure graphique 
     """
     #Initialise la tortue.
     border = turtle.Turtle() 
@@ -62,6 +61,7 @@ def border_setup():
         border.forward(512)
         border.left(90)
 
+
 def click_pen_size_up(x,y):
     """
     description: une fonction qui sactive lorsque le bouton pen + est appuye 
@@ -74,6 +74,7 @@ def click_pen_size_up(x,y):
     pen_size += 1
     pen.pensize(pen_size)
    
+
 def click_pen_size_down(x,y):
     """
     description: une fonction qui sactive lorsque le bouton pen - 
@@ -88,30 +89,31 @@ def click_pen_size_down(x,y):
    
 
 def click_save(x,y):
-     """
+    """
     description: une fonction qui cree un fichier eps a partir du 
     dessin du joueur
     entree: x,y sont obligatoir avec la fonction onclick mais 
     ne sont pas utilisee
     sortie: un fichier eps contenant le dessin de lutlisateur.
     """
-     #Reduit la taille de lecran pour ne recuperer que le dessins du joueur.
-     turtle.setup(512,512) 
-     #Cette commande cache la tortue pour ne pas la voir apparaitre
-     # dans le ficher eps
-     turtle.hideturtle() 
-     #get screen recupere lecran avec turtle get canvas \
+    #Reduit la taille de lecran pour ne recuperer que le dessins du joueur.
+    turtle.setup(512,512) 
+    #Cette commande cache la tortue pour ne pas la voir apparaitre
+    # dans le ficher eps
+    turtle.hideturtle() 
+    #get screen recupere lecran avec turtle get canvas \
     #recupere lecran complet avec le fond a laide de tkinter\
     #postscript converti et sauvegarde en post script le contenu 
     # de get screen et get canvas
-     screen = turtle.getscreen()
-     canvas = screen.getcanvas()
-     # Cette commande cree un fichier eps du canevas \
-     canvas.postscript(file=Path(__file__).parent.parent / "input/eps/" / 'input.eps')
+    screen = turtle.getscreen()
+    canvas = screen.getcanvas()
+    # Cette commande cree un fichier eps du canevas \
+    canvas.postscript(file=Path(__file__).parent.parent / "input/eps/" / 'input.eps')
     # Remet lecran a sa taille initiale pour que les boutons soit accessible.                                            
-     turtle.setup(512,600)
-     global is_saved
-     is_saved = True
+    turtle.setup(512,600)
+    global is_saved
+    is_saved = True
+
 
 def click_pen_up(x,y):
     """
@@ -124,6 +126,7 @@ def click_pen_up(x,y):
     #Une fonction qui souleve le stylo ou arrette decrire.
     pen.penup()
 
+
 def click_pen_down(x,y):
     """
     description: Cette fonction s'active lorsque le bouton pendown est appuye elle depose le crayon(recomancer a ecrire).
@@ -132,6 +135,7 @@ def click_pen_down(x,y):
     """
     #Une fonction qui depose le stylo ou recommance a ecrire.
     pen.pendown()
+
 
 def click_behavior(x , y):
    """
@@ -142,6 +146,7 @@ def click_behavior(x , y):
    # Teleporte le stylo a lendroit du click avec les entree x,y
    pen.setposition(x,y)
     
+
 def click_eraser (x,y):
     """
     description: Cette fonction s'active lorsque le bouton eraser est appuye elle met le stylo en blanc pour effacer.
@@ -152,6 +157,7 @@ def click_eraser (x,y):
     # pour une meilleure visibilite.
     pen.color("white","red")
 
+
 def click_black(x,y):
     """
     description: Cette fonction s'active lorsque le bouton black est appuye elle met le stylo en noir pour ecrire.
@@ -161,6 +167,7 @@ def click_black(x,y):
     ##Change la trail du crayon tout en gardant le milleux 
     # rouge pour une meilleure visibilite.
     pen.color("black","red")
+
 
 def set_up_button():
     """
@@ -206,13 +213,14 @@ def set_up_button():
         #Cree le les touches du click et la fonction associe a chaque torute.
         turtle_list[i][0].onclick(turtle_list[i][1]) 
             
+
 def final_setup():
     """
-    description: Call toute les fonction pour creer les boutons, linterface graphique, et le stylo\
-                     elle initialise aussi le controle pour le stylo et la grosseur de lecran.
+    description: Call toute les fonction pour creer les boutons, linterface 
+        graphique, et le stylo. Elle initialise aussi le controle pour le 
+        stylo et la grosseur de l'ecran.
     entrees:aucune
     sorties:aucune
-    
     """
     #Taille de lecran.
     turtle.setup(512,600)
