@@ -24,11 +24,8 @@
 
 <p align="justify"> 
 Ceci est une remise du projet 2 pour le cours 243-224-SH PROGRAMMATION 1.
-TODO
+Logiciel de dessin qui peut exporter une image en bitmap a partir d'un eps et un csv l'utilisateur peut utiliser plusieurs outils de dessins comme une efface, un crayon noir et pouvoir modifier la taille du crayon se qui permet dexprimer librement sa creativité
 </p>
-
-<h3>À corriger: TODO</h3>
-<h4>Digne d'intérêts: TODO</h4>
 
 <!-- PROJECT FILES DESCRIPTION -->
 <h2 id="project-files-description">Description de l'hierarchie des fichiers</h2>
@@ -54,28 +51,14 @@ TODO
 <h2 id="getting-started">Pour commencer</h2>
 <h3>Pour tester les fonctionalités du projet, vous devez TODO.</h3>
 <ol>
-  <li> 1 Lancer app.py</li>
-  <li> 2 Trainer la souris pour dessiner</li>
-  <li> 3 Pour sauvegarder appuyez sur le bouton sauvegarde</li>
-  <li> 4 Pour exporter appuyer sur le x aux coin de la page turtle</li>
+  <li>Lancer app.py</li>
+  <li>Trainer la souris pour dessiner</li>
+  <li>Pour sauvegarder appuyez sur le bouton sauvegarde</li>
+  <li>Pour exporter appuyer sur le x aux coin de la page turtle</li>
 <ol>
-
 
 <!-- CREDITS -->
 <h2 id="credits">Références</h2>
-TODO
-
-
-
-## But
-
-  Réaliser un logiciel de dessin qui peut exporter une image en bitmap a partir d'un eps et un csv l'utilisateur peut utiliser plusieurs outils de dessins comme une efface, un crayon noir et pouvoir modifier la taille du crayon se qui permet dexprimer librement sa creativité
-
-## Manuel d'instruction
-  1 Lancer app.py
-  2 Trainer la souris pour dessiner
-  3 Pour sauvegarder appuyez sur le bouton sauvegarde
-  4 Pour exporter appuyer sur le x aux coin de la page turtle
 
 ## Entree sorties
   entrée : fichier eps et fichier csv   
